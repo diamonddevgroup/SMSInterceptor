@@ -16,7 +16,7 @@ Usage
     public static String randomString(int length) {
         return randomString(length, false);
     }
-
+    
     //Method to generate random strings
     public static String randomString(int length, boolean numberOnly) {
         char[] characterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
@@ -37,15 +37,16 @@ Usage
         return new String(result);
     }
 
-        String code = randomString(6, true);
-        // Send the code in an sms to user phone number
+    String code = randomString(6, true);
+    // Send the code in an sms to user phone number
 
-        //Listen to incoming sms on the code input form
-        myForm.addShowListener(evt -> {
-            SMSInterceptor.grabNextSMS((value) -> {
-                if (value.contains(code)) { //check if the sms contains the code that was sent to user phone number
-                    codeTextField.setText(code);
-                    verify(code); // verify user with the code
-                }
-            });
+    //Listen to incoming sms on the code input form
+    myForm.addShowListener(evt -> {
+        SMSInterceptor.grabNextSMS((value) -> {
+            if (value.contains(code)) { //check if the sms contains the code that was sent to user phone number
+                codeTextField.setText(code);
+                verify(code); // verify user with the code
+            }
         });
+    });
+
