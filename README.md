@@ -3,7 +3,7 @@ Intercept incoming sms on supported platforms (Android) in Codename One
 
 # Installation
 
-- Download SMSInterceptor.cn1lib to your project from CodenameOne Extensions Library (Right-click -> Codename One -> CodenameOne Settings -> Extensions -> Search for comScore)
+- Download SMSInterceptor.cn1lib to your project from CodenameOne Extensions Library (Right-click -> Codename One -> CodenameOne Settings -> Extensions -> Search for SMSInterceptor)
 
 - Right-click your project and do `Refresh cn1Libs` to generate the necessary classes.
 
