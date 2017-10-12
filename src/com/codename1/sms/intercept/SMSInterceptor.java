@@ -29,11 +29,15 @@ public class SMSInterceptor {
     }
 
     public static void grabNextSMS(SuccessCallback<String> onSuccess) {
-        SMSCallback.onSuccess = onSuccess;
-        get().bindSMSListener();
+        if (isSupported()) {
+            SMSCallback.onSuccess = onSuccess;
+            get().bindSMSListener();
+        }
     }
 
     static void unbindListener() {
-        get().unbindSMSListener();
+        if (isSupported()) {
+            get().unbindSMSListener();
+        }
     }
 }
